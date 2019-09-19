@@ -50,6 +50,7 @@ public class HomeController {
 	// ****  Navigation between Pages  ***
 	
 	
+	
 	@RequestMapping("/register1")
 	public String goRegister(Model model, @ModelAttribute RegisterUser registerUser) {
 		
@@ -101,7 +102,7 @@ public class HomeController {
 				model.addAttribute("firstName", firstNameStore);
 				model.addAttribute("email", email );
 				
-				return "SelectService";
+				return "Customer/SelectService";
 			}
 			else {
 				model.addAttribute("loginMess", "Bad Credentials. Please Re enter Your Password");
@@ -155,6 +156,6 @@ public class HomeController {
 			@RequestMapping("/legalDocumentForm")
 			public String goLegalDocument(Model model) {
 					
-					return "SelectService";
+					return "Customer/SelectService";
 			}
 }
