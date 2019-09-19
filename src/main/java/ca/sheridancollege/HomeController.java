@@ -15,6 +15,9 @@ public class HomeController {
 
 	Dao dao = new Dao();
 	
+	
+	// ****  Navigation between Pages  ***
+	
 	@RequestMapping("/")
 	public String goHome(Model model) {
 		model.addAttribute("registerUser", new RegisterUser());
@@ -40,8 +43,12 @@ public class HomeController {
 	public String goAdminPage(Model model, @ModelAttribute RegisterUser registerUser) {
 		model.addAttribute("registerUser", new RegisterUser());
 		
-		return "Admin";
+		return "Admin/Admin";
 	}
+	
+	
+	// ****  Navigation between Pages  ***
+	
 	
 	@RequestMapping("/register1")
 	public String goRegister(Model model, @ModelAttribute RegisterUser registerUser) {
