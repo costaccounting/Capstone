@@ -24,11 +24,14 @@
 <body data-spy="scroll" data-target="#main-nav" id="home">
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
     <div class="container">
+    
     <c:url var = "url1" value = "/"></c:url>
-      <a href="${url1 }" class="navbar-brand">LegalFD</a>
+      <a href="${url1}" class="navbar-brand">LegalFD</a>
+     
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -88,13 +91,13 @@
               <div class="card-body">
                 <h3>Sign In</h3>
                 <br>
-                <form action="/login">
+                <form action="/login" >
                   
                   <div class="form-group">
                     <input type="email" name="email" placeholder="Sam@Law.com" class="form-control form-control-lg" placeholder="Email">
                   </div>
                   <div class="form-group">
-                    <input type="password" name="password" placeholder="Sam123" class="form-control form-control-lg" placeholder="Password">
+                    <input type="password" name="password" placeholder="Sam" class="form-control form-control-lg" placeholder="Password">
                   </div>
                   
                   <input type="submit" value="Sign In" class="btn btn-outline-light btn-block">
@@ -102,7 +105,7 @@
                 <p align="center" style="color:red; font-size: 1.5em;">${loginMess}</p>
                 <p align="center" style="color:green; font-size: 1.5em;">${logOutMess}</p>
                 
-	  <br><br>
+	  			<br><br>
                 </form>
                 
               </div>

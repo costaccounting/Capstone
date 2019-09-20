@@ -34,5 +34,13 @@ public class RegisterUser {
 	private String password;
 	
 	private String role="Client";
+
+	public RegisterUser(String email, String firstName, String lastName, String password) {
+		super();
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+	}
 	
 }

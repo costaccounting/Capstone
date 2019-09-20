@@ -17,28 +17,33 @@
     crossorigin="anonymous">
   
   
-<title>Admin Page</title> 	
+<title>Lawyer Page</title> 	
 
 </head>
 <body>
 
 <div>
-	<p type="hidden" name ="email" value="${email}"/>		
+	<p type="hidden" name ="email" value="${Useremail}"/>
+	<p type="hidden" name ="password" value="${UserPassword}"/>		
 </div>
 
 
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
+    <!-- 
       <c:url var = "url" value = "/admin"></c:url>
             <a href= "${url}" class="navbar-brand">LegalFD</a>
+       -->
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav">
           <li class="nav-item px-2">
+          <!-- 
             <c:url var = "url" value = "/register"></c:url>
             <a href= "${url}" class="nav-link active">Dashboard</a>
+           -->
           </li>
 
           <li class="nav-item px-2">
@@ -51,6 +56,7 @@
           <li class="nav-item dropdown mr-3">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
               <i class="fas fa-user"></i> Welcome ${firstName}
+           
             </a>
             <div class="dropdown-menu">
               <a href="profile.html" class="dropdown-item">
@@ -83,7 +89,7 @@
       <div class="row">
         <div class="col-md-6">
           <h1>
-            <i class="fas fa-users"></i> Users</h1>
+            <i class="fas fa-users"></i>List of Users</h1>
         </div>
       </div>
     </div>
@@ -139,21 +145,31 @@
                   <th>Last Name</th>
                   <th>Role</th>
                   <th> </th>
+                  <th> </th>
                   
                 </tr>
               </thead>
               <tbody>
               
-              	<c:forEach var="Users" items="${allData}">
+              	<c:forEach var="Users" items="${allDataForLawyer}">
 					<tr>
 						<td>${Users.email}</td>
 						<td>${Users.firstName}</td>
 						<td>${Users.lastName}</td>
 						<td>${Users.role}</td>
 						<td>
-		                    <a href="details.html" class="btn btn-secondary">
+		                    <a href="<c:url value="/details/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-secondary">
 		                      <i class="fas fa-angle-double-right"></i> Details
 		                    </a>
+	                  	</td>
+	                  	<td>
+		                    
+			                    <div class="col-md-3">
+						          <a href="<c:url value="/delete/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger btn-block">
+						            <i class="fas fa-trash"></i> Delete User
+						          </a>
+	       						 </div>
+       						 
 	                  	</td>
 					</tr>
 				</c:forEach>
