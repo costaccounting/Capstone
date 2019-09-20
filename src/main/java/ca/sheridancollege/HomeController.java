@@ -131,6 +131,7 @@ public class HomeController {
 				
 				model.addAttribute("firstName", firstNameStore);
 				model.addAttribute("Useremail", email );
+				model.addAttribute("UserPassword", password);
 				model.addAttribute("allData", dao.getDataForAdmin(email));
 				
 				return "Admin/Admin";
@@ -150,6 +151,8 @@ public class HomeController {
 				
 				model.addAttribute("firstName", firstNameStore);
 				model.addAttribute("Useremail", email );
+				model.addAttribute("UserPassword", password);
+				
 				model.addAttribute("allDataForLawyer", dao.getDataForLawyer(email));
 				
 				return "Lawyer/Lawyer";
@@ -166,27 +169,30 @@ public class HomeController {
 	}
 //-----------------********		LOGIN	END		********---------------------------------
 	
-	@RequestMapping("/dashboard/{email}")
-	public String goDashbaord(Model model, @PathVariable String email ,@RequestParam String Useremail, @RequestParam String password) {
+	@RequestMapping("/dashboard/{Useremail}/{UserPassword}")
+	public String goDashbaord(Model model, @PathVariable String Useremail, @PathVariable String UserPassword) {
 		
 		
-			if((dao.getRole(email, password).get(0)).equals("Admin"))
+			if((dao.getRole(Useremail, UserPassword).get(0)).equals("Admin"))
 			{
-				String firstNameStore = dao.getFirstName(email).get(0);
+				String firstNameStore = dao.getFirstName(Useremail).get(0);
 				
 				model.addAttribute("firstName", firstNameStore);
-				model.addAttribute("Useremail", email );
-				model.addAttribute("allData", dao.getDataForAdmin(email));
+				model.addAttribute("Useremail", Useremail);
+				model.addAttribute("UserPassword", UserPassword);
+				
+				model.addAttribute("allData", dao.getDataForAdmin(Useremail));
 				
 				return "Admin/Admin";
 			}
-			else if((dao.getRole(email, password).get(0)).equals("Lawyer"))
+			else if((dao.getRole(Useremail, UserPassword).get(0)).equals("Lawyer"))
 			{
-				String firstNameStore = dao.getFirstName(email).get(0);
+				String firstNameStore = dao.getFirstName(Useremail).get(0);
 				
 				model.addAttribute("firstName", firstNameStore);
-				model.addAttribute("Useremail", email );
-				model.addAttribute("allDataForLawyer", dao.getDataForLawyer(email));
+				model.addAttribute("Useremail", Useremail );
+				model.addAttribute("allDataForLawyer", dao.getDataForLawyer(Useremail));
+				model.addAttribute("UserPassword", UserPassword);
 				
 				return "Lawyer/Lawyer";
 			}
@@ -217,7 +223,13 @@ public class HomeController {
 	
 	
 	
-	
+	@RequestMapping(value = "/delete/{email}")	
+	public String delete(Model model, @PathVariable String email) {
+		
+		dao.deleteUser(email);
+		System.out.println("It deleted the account");
+		return "index";
+	}
 	
 	
 //-----------------****************---------------------------------
@@ -226,21 +238,36 @@ public class HomeController {
 	public String deleteAdminSide(Model model, @PathVariable String email, @PathVariable String Useremail, @PathVariable String UserPassword) {
 		
 		dao.deleteUser(email);
-		model.addAttribute("allData", dao.getDataForAdmin(email));
-	
+
+		String firstNameStore = dao.getFirstName(Useremail).get(0);
+		
+		model.addAttribute("firstName", firstNameStore);
+		model.addAttribute("Useremail", Useremail);
+		model.addAttribute("UserPassword", UserPassword);
+		
+		model.addAttribute("allData", dao.getDataForAdmin(Useremail));
 		
 		return "Admin/Admin";
 	}
 	
 //-----------------****************---------------------------------
-	//-----------------****************---------------------------------
+
+
+	
+	
+//-----------------****************---------------------------------
 
 		@RequestMapping(value = "/deleteLawyer/{email}/{Useremail}/{UserPassword}")	
 		public String deleteLawyerSide(Model model, @PathVariable String email, @PathVariable String Useremail, @PathVariable String UserPassword) {
 			
 			dao.deleteUser(email);
-			model.addAttribute("allDataForLawyer", dao.getDataForLawyer(email));
-		
+
+			String firstNameStore = dao.getFirstName(Useremail).get(0);
+			
+			model.addAttribute("firstName", firstNameStore);
+			model.addAttribute("Useremail", Useremail );
+			model.addAttribute("allDataForLawyer", dao.getDataForLawyer(Useremail));
+			model.addAttribute("UserPassword", UserPassword);
 			
 			return "Lawyer/Lawyer";
 		}

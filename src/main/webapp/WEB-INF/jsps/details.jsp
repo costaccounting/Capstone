@@ -23,7 +23,7 @@
 
 <div>
 	<p type="hidden" name ="email" value="${Useremail}"/>
-	<p type="hidden" name ="email" value="${UserPassword}"/>		
+	<p type="hidden" name ="password" value="${UserPassword}"/>		
 </div>
 
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
@@ -82,7 +82,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <a href="<c:url value="/delete/${email}"/>" class="btn btn-light btn-block">
+          <a href="<c:url value="/dashboard/${Useremail}/${UserPassword} }"/>" class="btn btn-light btn-block">
             <i class="fas fa-arrow-left"></i> Back To Dashboard
           </a>
         </div>
@@ -91,11 +91,13 @@
             <i class="fas fa-check"></i> Save Changes
           </a>
         </div>
+        <!-- 
         <div class="col-md-3">
           <a href="dashboard.html" class="btn btn-danger btn-block">
             <i class="fas fa-trash"></i> Delete User
           </a>
         </div>
+         -->
       </div>
     </div>
   </section>
@@ -110,7 +112,9 @@
               <h4>Edit User</h4>
             </div>
             <div class="card-body">
-              <form>
+              
+             
+             <form>
                 <div class="form-group">
                   <label for="title">Name</label>
                   <input type="text" class="form-control" >
@@ -119,8 +123,7 @@
                   <label for="title">Email</label>
                   <input type="text" class="form-control">
                 </div>
-                
-
+             
                 
               </form>
             </div>

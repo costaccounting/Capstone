@@ -165,7 +165,7 @@
 	                  	<td>
 		                    
 			                    <div class="col-md-3">
-						          <a href="<c:url value="/delete/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger btn-block">
+						          <a href="<c:url value="/deleteLawyer/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger btn-block">
 						            <i class="fas fa-trash"></i> Delete User
 						          </a>
 	       						 </div>
