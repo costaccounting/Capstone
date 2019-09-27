@@ -1,0 +1,287 @@
+@charset "ISO-8859-1";
+
+/*	!*!*!*! BOTTOM Part RIYA !*!*!*! */
+
+body {
+  background: #333;
+  color: #fff;
+}
+
+.navbar {
+  border-bottom: #008ed6 3px solid;
+  opacity: 0.8;
+}
+
+#home-section {
+  background: url(../img/home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 700px;
+}
+
+#home-section .dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#home-section .home-inner {
+  padding-top: 150px;
+}
+
+#home-section .card-form {
+  opacity: 0.8;
+}
+
+#home-section .fas,
+#create-section .fas {
+  color: #008ed6;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#explore-section .fas,
+#share-section .fas {
+  background: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+
+/*	!*!*!*! ABOVE Part RIYA !*!*!*! */
+
+
+/*	!*!*!*! BOTTOM Part PARAS !*!*!*! */
+
+/*
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=checkbox], select {
+  
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=email], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: DodgerBlue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#logOut{
+	float: right;
+	width: 11%;
+  background-color: DodgerBlue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: royalblue;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+h1{
+	color: orange;
+	background-color: darkblue;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+h2{
+	color: DodgerBlue;
+	font-size: 1.5em;
+	text-align: center;
+	padding: 14px 20px;
+  margin: 8px 0;
+ 
+}
+
+select{
+	text-align: center;
+}
+
+footer{
+	color: DodgerBlue;
+	font-size: 1.1em;
+	text-align: center;
+}
+
+#tabular {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+ /* width: 100%;
+ width: 100%;
+ float: left;
+}
+
+#tabular td, #tabular th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tabular tr:nth-child(even){background-color: #f2f2f2;}
+
+#tabular tr:hover {background-color: #ddd;}
+
+#tabular th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+table{
+	 empty-cells: show;
+}
+
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+.topnav {
+  background-color: #f2f2f2;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar 
+
+.topnav img {
+	float:left;
+	height: 70px;
+	width: 70px;
+}
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link 
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+  
+}
+
+
+.footer {
+  
+ position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#f2f2f2;
+  color: black;
+  text-align: center;
+}
+#documentSelection {
+	font-size: 20px;
+	height:175px;
+	
+}
+#payment {
+	font-size: 15px;
+	height:250px;
+	
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+   padding: 15px;
+  text-align: left;
+}
+*/

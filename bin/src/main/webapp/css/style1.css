@@ -1,0 +1,131 @@
+@charset "ISO-8859-1";
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=date], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: royalblue;
+}
+
+.topnav {
+  background-color: #f2f2f2;
+  overflow: hidden;
+}
+
+ Style the links inside the navigation bar 
+
+.topnav img {
+	float:left;
+	height: 70px;
+	width: 70px;
+}
+
+#logOut{
+	float: right;
+	width: 11%;
+  background-color: DodgerBlue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+h1{
+	color: orange;
+	background-color: darkblue;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+select{
+	text-align: center;
+}
+
+#tabular {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+ /* width: 100%;*/
+ width: 100%;
+ float: left;
+}
+
+#tabular td, #tabular th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tabular tr:nth-child(even){background-color: #f2f2f2;}
+
+#tabular tr:hover {background-color: #ddd;}
+
+#tabular th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+table{
+	 empty-cells: show;
+}
+
+
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
