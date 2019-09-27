@@ -151,20 +151,31 @@
 						<td>${Users.email}</td>
 						<td>${Users.firstName}</td>
 						<td>${Users.lastName}</td>
+						<td>${Users.lastName}</td>
 						<td>${Users.role}</td>
+						<!-- 
+						<c:url var="url11" value="/changeUser/${Users.email}/${Useremail}/${UserPassword}"></c:url>
+	
+						<form:form action="${url11}" method="post" modelAttribute="user">
+						
+						<form:select path="role" items="${user.rolesList}"/><br/>
+		
+	
+						<input type="submit" value="Change Privleges" />
+						</form:form>
+						-->
+							
 						<td>
 		                    <a href="<c:url value="/details/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-secondary">
 		                      <i class="fas fa-angle-double-right"></i> Details
 		                    </a>
 	                  	</td>
 	                  	<td>
-		                    
-			                    <div class="col-md-3">
-						          <a href="<c:url value="/delete/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger btn-block">
-						            <i class="fas fa-trash"></i> Delete User
-						          </a>
-	       						 </div>
-       						 
+			               	<div class="col-md-3">
+						       <a href="<c:url value="/deleteAdmin/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger btn-block">
+						          <i class="fas fa-trash"></i> Delete User
+						       </a>
+	       					</div> 
 	                  	</td>
 					</tr>
 				</c:forEach>

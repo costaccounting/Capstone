@@ -33,14 +33,8 @@ public class RegisterUser {
 	//@Pattern(message="Password should be Alpha-Numeric", regexp = "^[A-Z][a-z][a-z][a-z][0-9][0-9]$")
 	private String password;
 	
-	private String role="Client";
-
-	public RegisterUser(String email, String firstName, String lastName, String password) {
-		super();
-		this.email = email;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.password = password;
-	}
+	private String role= "Client";
 	
+	//private String[] rolesList = {"Client", "Lawyer"};
+
 }

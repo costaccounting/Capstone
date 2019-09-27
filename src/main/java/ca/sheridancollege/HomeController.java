@@ -182,6 +182,7 @@ public class HomeController {
 				model.addAttribute("UserPassword", UserPassword);
 				
 				model.addAttribute("allData", dao.getDataForAdmin(Useremail));
+				model.addAttribute("user", new RegisterUser());
 				
 				return "Admin/Admin";
 			}
