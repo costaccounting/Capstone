@@ -107,6 +107,9 @@
 		                  </div>
                   
                   <input type="submit" value="Sign Up" class="btn btn-outline-light btn-block">
+                  
+                  
+                  <p align="center" style="color:red; font-size: 1.5em;">${RegErrMess}</p>
               </form>
               </div>
             </div>

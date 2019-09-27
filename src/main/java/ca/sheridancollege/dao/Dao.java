@@ -43,7 +43,7 @@ public class Dao {
 	
 //-----------------------------------------------------------******************************------------------------------------	
 	
-	public List<String> getLoginCredentails(String email, String password){
+	public List<String> getRole(String email, String password){
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		
@@ -100,22 +100,75 @@ public class Dao {
 		}
 		
 //-----------------------------------------------------------******************************------------------------------------	
-		
-		public List<RegisterUser> getAllData() {
+	
+		public List<String> getLastName(String email){
 			Session session = sessionFactory.openSession();
 			session.beginTransaction();
-
-			CriteriaBuilder cb = session.getCriteriaBuilder();
-			CriteriaQuery<RegisterUser> criteria = cb.createQuery(RegisterUser.class);
-			Root<RegisterUser> root = criteria.from(RegisterUser.class);
-			List<RegisterUser> registredUser = session.createQuery(criteria).getResultList();
-
+			
+			//Register register = session.get(Register.class, email, password);
+			
+			Query query = session.createQuery("select lastName from RegisterUser where email =:email");
+			query.setParameter("email", email);
+			
+			List<String> register = (List<String>) query.getResultList();
+			
 			session.getTransaction().commit();
 			session.close();
 			
-			return registredUser;
+			return register;
+		}
+		
+//-----------------------------------------------------------******************************------------------------------------	
+		
+		public List<String> getDataForLawyer(String email){
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			
+			//Register register = session.get(Register.class, email, password);
+			
+			Query query = session.createQuery("from RegisterUser where email != :email AND role != :role");
+			query.setParameter("email", email);
+			query.setParameter("role", "Admin");
+			
+			
+			List<String> register = (List<String>) query.getResultList();
+			
+			session.getTransaction().commit();
+			session.close();
+			
+			return register;
 		}
 
+//-----------------------------------------------------------******************************------------------------------------	
+		
+		public List<String> getDataForAdmin(String email) {
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			
+			Query query = session.createQuery("from RegisterUser where email != :email");
+			query.setParameter("email", email);
+			
+			
+			List<String> register = (List<String>) query.getResultList();
+			
+			session.getTransaction().commit();
+			session.close();
+			
+			return register;
+		}
+		
+		
+//-----------------------------------------------------------******************************------------------------------------	
+		public void deleteUser(String email) {
+			Session session = sessionFactory.openSession();
+			session.beginTransaction();
+			
+			RegisterUser register = (RegisterUser)session.get(RegisterUser.class, email);
+			session.delete(register);
+			
+			session.getTransaction().commit();
+			session.close();
+		}
 		
 		
 //-----------------------------------------------------------******************************------------------------------------	
