@@ -30,8 +30,10 @@
 
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark p-0">
     <div class="container">
+    <!-- 
       <c:url var = "url" value = "/admin"></c:url>
             <a href= "${url}" class="navbar-brand">LegalFD</a>
+       -->
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -84,7 +86,7 @@
       <div class="row">
         <div class="col-md-6">
           <h1>
-            <i class="fas fa-users"></i> Users</h1>
+            <i class="fas fa-users"></i>All Users</h1>
         </div>
       </div>
     </div>
@@ -151,19 +153,7 @@
 						<td>${Users.email}</td>
 						<td>${Users.firstName}</td>
 						<td>${Users.lastName}</td>
-						<td>${Users.lastName}</td>
 						<td>${Users.role}</td>
-						<!-- 
-						<c:url var="url11" value="/changeUser/${Users.email}/${Useremail}/${UserPassword}"></c:url>
-	
-						<form:form action="${url11}" method="post" modelAttribute="user">
-						
-						<form:select path="role" items="${user.rolesList}"/><br/>
-		
-	
-						<input type="submit" value="Change Privleges" />
-						</form:form>
-						-->
 							
 						<td>
 		                    <a href="<c:url value="/details/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-secondary">
@@ -171,11 +161,11 @@
 		                    </a>
 	                  	</td>
 	                  	<td>
-			               	<div class="col-md-3">
-						       <a href="<c:url value="/deleteAdmin/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger btn-block">
+			               	
+						       <a href="<c:url value="/deleteAdmin/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger">
 						          <i class="fas fa-trash"></i> Delete User
 						       </a>
-	       					</div> 
+	       					
 	                  	</td>
 					</tr>
 				</c:forEach>

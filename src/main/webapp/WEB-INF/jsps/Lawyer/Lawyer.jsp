@@ -162,15 +162,15 @@
 		                      <i class="fas fa-angle-double-right"></i> Details
 		                    </a>
 	                  	</td>
-	                  <!-- 
-	                  	<td>
-			                    <div class="col-md-3">
-						          <a href="<c:url value="/deleteLawyer/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger btn-block">
-						            <i class="fas fa-trash"></i> Delete User
-						          </a>
-	       						 </div>	 
+	                   
+	                  		<td>
+			               	
+						       <a href="<c:url value="/deleteAdmin/${Users.email}/${Useremail}/${UserPassword}"/>" class="btn btn-danger">
+						          <i class="fas fa-trash"></i> Delete User
+						       </a>
+	       					
 	                  	</td>
-	                  	 -->
+	                  	
 					</tr>
 				</c:forEach>
               
