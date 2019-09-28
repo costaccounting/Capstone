@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Built-By: Prodip
-Build-Jdk: 12.0.1
 Implementation-Title: Capstone-Lawyer
 Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: paras
 Implementation-Vendor-Id: ca.sheridancollege
-Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
- -starter-parent/Capstone-Lawyer
+Build-Jdk: 1.8.0_221
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Capstone-Lawyer
 Created-By: Maven Integration for Eclipse
 
