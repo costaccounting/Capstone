@@ -77,16 +77,6 @@
       <groupId>org.hibernate.validator</groupId>  
       <artifactId>hibernate-validator</artifactId> 
     </dependency>  
-    <dependency> 
-      <groupId>com.microsoft.sqlserver</groupId>  
-      <artifactId>mssql-jdbc</artifactId>  
-      <version>7.4.1.jre12</version> 
-    </dependency>  
-    <dependency> 
-      <groupId>com.microsoft.azure</groupId>  
-      <artifactId>azure-webapp-maven-plugin</artifactId>  
-      <version>0.1.2</version> 
-    </dependency> 
   </dependencies>  
   <build> 
     <plugins> 
@@ -97,37 +87,6 @@
           <executable>true</executable> 
         </configuration> 
       </plugin>  
-      <plugin> 
-        <groupId>com.microsoft.azure</groupId>  
-        <artifactId>azure-webapp-maven-plugin</artifactId>  
-        <!-- check Maven Central for the latest version -->  
-        <version>1.6.0</version>  
-        <configuration> 
-          <schemaVersion>v2</schemaVersion>  
-          <resourceGroup>Legalfd</resourceGroup>  
-          <appName>LegalFD</appName>  
-          <runtime> 
-            <os>linux</os>  
-            <javaVersion>jre8</javaVersion>  
-            <webContainer>jre8</webContainer> 
-          </runtime>  
-          <deployment> 
-            <resources> 
-              <resource> 
-                <directory>${project.basedir}/target</directory>  
-                <includes> 
-                  <include>*.war</include> 
-                </includes> 
-              </resource> 
-            </resources> 
-          </deployment>  
-          <region>westeurope</region>  
-          <deploymentSlot>
-            <name>LegalFD-slot</name>
-            <configurationSource>attributes</configurationSource>
-          </deploymentSlot>
-        </configuration> 
-      </plugin> 
     </plugins> 
   </build> 
 </project>

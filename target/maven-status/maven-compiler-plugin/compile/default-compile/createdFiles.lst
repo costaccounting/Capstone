@@ -1,4 +1,4 @@
-ca\sheridancollege\beans\RegisterUser.class
-ca\sheridancollege\dao\Dao.class
-ca\sheridancollege\HomeController.class
-ca\sheridancollege\CapstoneLawyerApplication.class
+ca/sheridancollege/CapstoneLawyerApplication.class
+ca/sheridancollege/beans/RegisterUser.class
+ca/sheridancollege/dao/Dao.class
+ca/sheridancollege/HomeController.class
